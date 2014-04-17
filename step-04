@@ -1,0 +1,31 @@
+# Adicionando arquivos no GIT
+
+git add 
+
+# Fazendo um commit
+
+git commit 
+
+# A beleza de um controle de versão distribuido
+
+git log 
+
+# Logs extremamente sujos e feios, resolveremos com um simples alias
+
+git config --global alias.lg log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+# Tente agora
+
+git lg 
+
+## Uma explicação sobre como o git funciona 
+## Branchs, tags e stash
+
+## Criando um fork no github
+
+git remote -v
+git remote add seu-nome seu-fork
+
+
+
+
