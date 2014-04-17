@@ -1,0 +1,55 @@
+#!/bin/bash
+
+function abort {
+  echo >&2 "setup failed."; exit 1;
+}
+
+function check_installation {
+  hash $1 2>/dev/null || { echo >&2 "ERROR: $1 is not available."; abort; }
+}
+
+function check_brew {
+  check_installation brew
+  echo "✓ brew is ok."
+}
+
+function check_vim {
+  check_installation vim
+  echo "✓ vim is ok."
+}
+
+function check_tmux {
+  check_installation tmux
+  echo "✓ tmux is ok."
+}
+
+function install_brew { 
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  echo "✓ brew installed."
+}
+
+function install_tmux {
+  brew install tmux
+  mv tmux_conf ~/.tmux.conf
+}
+
+function install_vim {
+  [ -d ~/vim_plugins ] || mkdir -p ~/vim_plugins > /dev/null
+  git clone "https://github.com/jvortmann/vim-files" ~/vim_plugins
+  ln -s ~/vim_plugins  ~/.vim
+  ln -s ~/.vim/vimrc   ~/.vimrc
+
+
+  [ -d ~/.vim/bundle/vundle ] || git clone "https://github.com/gmarik/vundle.git" ~/.vim/bundle/vundle
+  vim +BundleInstall +qall
+}
+
+echo "setting up your machine..."
+install_brew
+install_tmux
+install_vim
+
+check_vim
+check_tmux
+echo "setup is complete!"
+
