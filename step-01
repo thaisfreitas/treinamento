@@ -1,0 +1,20 @@
+# Baixe o arquivo para fazer a configuracao inicial na sua maquina
+https://github.com/RatoX/treinamento-01
+
+# Coloque permissao para execucao
+chmod u+x setup
+
+# Rode setup
+./setup
+
+# E vamos começar...
+# crie uma pasta com o seu nome
+mkdir seu-nome-aqui
+
+# entre na pasta
+cd seu-nome-aqui
+
+# E abra o vim
+vim .
+
+
