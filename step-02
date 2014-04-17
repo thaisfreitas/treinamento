@@ -1,0 +1,29 @@
+# Coisas legais do vim
+
+# Split
+
+# Nerd tree
+
+# Find
+
+# Modes vim
+-  Normal mode: O modo principal do vim, aqui toda a magica acontece
+-  Editing Mode: Teclas que quando usadas entram em modo de insert 
+  i – insert at current position
+  a - insert AFTER current position
+  o - open (create) a new line below current line
+  I - insert AT START of current line
+  A – insert AFTER end of current line
+  O – open (create) a new line ABOVE current line
+
+# Navigation keys
+  h -> para esquerda
+  l -> para direita
+  j -> para baixo
+  k -> para cima
+
+# Combo breeeaaak
+  d - deleta
+  c - modifica
+  w - palavra
+  b - palavra antes
